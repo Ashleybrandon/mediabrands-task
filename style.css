@@ -1,0 +1,452 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+:root {
+  --beige: 199, 156, 132;
+  --teal: 131, 171, 173;
+  --yellow: 220, 165, 100;
+  --pink: 184, 109, 115;
+  --gold: 186, 135, 72;
+  --emerald: 61, 82, 72;
+  --black: 26, 29, 36;
+
+  --xl-heading: 46px;
+  --lg-heading: 36px;
+  --md-heading: 28px;
+  --sm-heading: 20px;
+  --xs-heading: 16px;
+
+  --text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.45);
+}
+
+html,
+body {
+  font-family: "Montserrat", Helvetica, sans-serif;
+  color: rgb(var(--black));
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(var(--black));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: var(--xl-heading);
+  line-height: var(--xl-heading);
+}
+
+h1 span {
+  font-size: var(--md-heading);
+}
+
+h2 {
+  font-size: var(--lg-heading);
+  line-height: calc(var(--lg-heading) + 4px);
+}
+
+h3 {
+  font-size: var(--md-heading);
+  line-height: calc(var(--md-heading) + 4px);
+}
+
+p {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/*-- Animate on scroll styles --*/
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.show {
+  opacity: 1;
+}
+
+.sub-heading {
+  transition-delay: 300ms;
+}
+
+#home-rooms h2 {
+  transition-delay: 400ms;
+}
+
+.rooms-row {
+  transition-delay: 500ms;
+}
+
+/*-- End animate on scroll styles --*/
+
+.btn {
+  text-transform: uppercase;
+  padding: 16px 32px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 40px 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+[class*="col-"] {
+  min-height: 1px;
+  height: auto;
+  padding: 0 10px;
+  border: 0;
+  width: 100%;
+}
+
+.hero-width {
+  max-width: 620px;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+
+#home-hero {
+  background-image: url("images/home-hero.jpg");
+}
+
+.hero.main-hero {
+  padding: 30% 20px;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero.main-hero h1,
+.hero.main-hero h2,
+.hero.main-hero h3 {
+  color: white;
+  text-shadow: var(--text-shadow);
+  margin: 0;
+}
+
+.hero.main-hero h3 {
+  font-size: var(--xs-heading);
+  line-height: calc(var(--sm-heading) + 4px);
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.bg-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(var(--black), 0.45);
+}
+
+#home-rooms h2 {
+  color: rgb(var(--gold));
+  font-size: var(--xs-heading);
+  line-height: calc(var(--xs-heading) +4px);
+}
+
+.row.rooms-row,
+.row.trends-row {
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+#home-rooms {
+  padding-bottom: 0;
+}
+
+#home-rooms .room {
+  width: 100%;
+  max-width: 400px;
+  height: 340px;
+  margin: 0 0 60px 0;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 500ms all;
+}
+
+.room.room-1 {
+  background-color: rgba(var(--beige), 0.65);
+  background-image: url("images/home-living.jpg");
+}
+
+.room.room-2 {
+  background-color: rgba(var(--gold), 0.65);
+  background-image: url("images/home-kitchen.jpg");
+}
+
+.room.room-3 {
+  background-color: rgba(var(--teal), 0.65);
+  background-image: url("images/home-bathroom.jpg");
+}
+
+.room.room-4 {
+  background-color: rgba(var(--pink), 0.65);
+  background-image: url("images/home-bedroom.jpg");
+}
+
+.room.room-5 {
+  background-color: rgba(var(--emerald), 0.65);
+  background-image: url("images/home-garden.jpg");
+}
+
+.room .room-box {
+  height: 108px;
+  width: 108px;
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  z-index: 1;
+  transition: 500ms all;
+}
+
+.room:hover .room-box {
+  opacity: 0;
+  transition: 500ms all;
+}
+
+.room-box.back-box {
+  z-index: -1;
+}
+.room:hover .room-box.back-box {
+  z-index: -1;
+  opacity: 1;
+}
+
+.room-1 .room-box {
+  background-color: rgba(var(--beige), 0.65);
+}
+.room-2 .room-box {
+  background-color: rgba(var(--gold), 0.65);
+}
+.room-3 .room-box {
+  background-color: rgba(var(--teal), 0.65);
+}
+.room-4 .room-box {
+  background-color: rgba(var(--pink), 0.65);
+}
+.room-5 .room-box {
+  background-color: rgba(var(--emerald), 0.65);
+}
+
+.room h4 {
+  position: absolute;
+  left: 0;
+  bottom: -54px;
+}
+
+/*--- Living room specific ---*/
+
+#living-hero {
+  background-image: url("images/living-room-hero.jpg");
+}
+
+#living-hero.hero.main-hero h1 {
+  font-size: var(--sm-heading);
+  line-height: calc(var(--sm-heading) +4px);
+  margin-bottom: 10px;
+}
+
+#living-room .trend .top-box {
+  height: 200px;
+  width: 200px;
+}
+
+#living-room nav {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#living-room nav a {
+  color: rgb(var(--gold));
+  font-weight: 400;
+  padding: 10px;
+}
+
+#living-room .trend-1 .top-box {
+  background-color: rgba(var(--beige), 0.65);
+}
+#living-room .trend-2 .top-box {
+  background-color: rgba(var(--gold), 0.65);
+}
+#living-room .trend-3 .top-box {
+  background-color: rgba(var(--teal), 0.65);
+}
+#living-room .trend-4 .top-box {
+  background-color: rgba(var(--pink), 0.65);
+}
+#living-room .trend-5 .top-box {
+  background-color: rgba(var(--emerald), 0.65);
+}
+
+.trends-row .trend {
+  width: 200px;
+  height: 380px;
+  margin: 0 20px;
+}
+
+#the-trends {
+  background-color: rgba(var(--black), 0.05);
+}
+
+#the-trends h2 {
+  font-size: var(--sm-heading);
+  text-align: center;
+}
+
+/*--- End living room specific ---*/
+
+@media (min-width: 960px) {
+  h1 {
+    font-size: calc(var(--xl-heading) + 12px);
+    line-height: calc(var(--xl-heading) + 12px);
+  }
+
+  h1 span {
+    font-size: var(--md-heading);
+  }
+
+  h2 {
+    font-size: calc(var(--lg-heading) + 14px);
+    line-height: calc(var(--lg-heading) + 18px);
+  }
+
+  h3 {
+    font-size: calc(var(--md-heading) + 6px);
+    line-height: calc(var(--md-heading) + 10px);
+  }
+
+  .row {
+    flex-direction: row;
+    max-width: 1120px;
+  }
+
+  .row.rooms-row,
+  .row.trends-row {
+    max-width: 1600px;
+    min-height: 620px;
+    height: auto;
+    justify-content: center;
+  }
+
+  .row.rooms-row {
+    flex-wrap: nowrap;
+  }
+
+  .row.trends-row {
+    flex-wrap: wrap;
+  }
+
+  .room.room-1,
+  .room.room-3,
+  .room.room-5,
+  .trend.trend-1,
+  .trend.trend-3,
+  .trend.trend-5 {
+    align-self: flex-start;
+  }
+
+  .hero.main-hero {
+    padding: 12% 20px;
+  }
+
+  #home-rooms .room {
+    width: 240px;
+    height: 380px;
+    margin: 0 20px;
+  }
+
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
